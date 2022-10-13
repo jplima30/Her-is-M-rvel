@@ -1,0 +1,11 @@
+## Xcode
+xcuserdata
+*.xcuserstate
+*.xcbkptlist
+*.xcworkspace
+*.bak
+
+## Mac OSX
+.DS_Store
+.vscode/
+.idea/
