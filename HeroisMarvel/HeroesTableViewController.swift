@@ -1,37 +1,58 @@
 import UIKit
 
 class HeroesTableViewController: UITableViewController {
-
+    var name: String?
+    var heroes: [Hero] = []
     var label: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
         label.textColor = .white
         return label
     }()
+    var loadingHeroes = false
+    var currentPage = 0
+    var total = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
+        label.text = "Buscando herois. Aguarde..."
+        loadHeroes()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
+    
+    func loadHeroes() {
+        loadingHeroes = true
+        MarvelAPI.loadHeros(name: name, page: currentPage) { (info) in
+            if let info = info {
+                self.heroes += info.data.results
+                self.total = info.data.total
+                print("Total:", self.total, "já incluídos:", self.heroes.count)
+                DispatchQueue.main.async {
+                    self.loadingHeroes = false
+                    self.label.text = "Não foram encontrados heróis com o nome \(self.name!)"
+                    self.tableView.reloadData()
+                }
+            }
+        }
+    }
 
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        tableView.backgroundView = heroes.count == 0 ? label : nil
+        return heroes.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
 
         // Configure the cell...
 
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.
@@ -49,7 +70,7 @@ class HeroesTableViewController: UITableViewController {
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
     */
 
