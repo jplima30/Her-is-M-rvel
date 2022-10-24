@@ -72,6 +72,7 @@
 		004A1F452906CABD003D73AE /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				0047D7DD28F9AA0400D62ACA /* MarvelAPI.swift */,
 				0047D7DF28F9AA1900D62ACA /* MarvelClasses.swift */,
 			);
 			path = Models;
@@ -107,7 +108,6 @@
 			isa = PBXGroup;
 			children = (
 				A13D20951F9D323300EB19F7 /* AppDelegate.swift */,
-				0047D7DD28F9AA0400D62ACA /* MarvelAPI.swift */,
 				0047D7E128F9FDD200D62ACA /* HeroTableViewCell.swift */,
 				004A1F452906CABD003D73AE /* Models */,
 				004A1F432906C9D2003D73AE /* Controllers */,

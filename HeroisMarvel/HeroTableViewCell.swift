@@ -1,5 +1,4 @@
 import UIKit
-import UIKit
 import Kingfisher
  
 class HeroTableViewCell: UITableViewCell {
