@@ -50,6 +50,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		004A1F432906C9D2003D73AE /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A13D20971F9D323300EB19F7 /* ViewController.swift */,
+				A13D20A91F9D333F00EB19F7 /* HeroViewController.swift */,
+				A13D20A71F9D331600EB19F7 /* HeroesTableViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		004A1F442906CA0C003D73AE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A13D20991F9D323300EB19F7 /* Main.storyboard */,
+				A13D209E1F9D323300EB19F7 /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		004A1F452906CABD003D73AE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0047D7DF28F9AA1900D62ACA /* MarvelClasses.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		23A6BD12DED42E3A7C4B4B2F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -80,15 +107,12 @@
 			isa = PBXGroup;
 			children = (
 				A13D20951F9D323300EB19F7 /* AppDelegate.swift */,
-				A13D20971F9D323300EB19F7 /* ViewController.swift */,
-				A13D20A91F9D333F00EB19F7 /* HeroViewController.swift */,
 				0047D7DD28F9AA0400D62ACA /* MarvelAPI.swift */,
-				0047D7DF28F9AA1900D62ACA /* MarvelClasses.swift */,
-				A13D20A71F9D331600EB19F7 /* HeroesTableViewController.swift */,
+				004A1F452906CABD003D73AE /* Models */,
+				004A1F432906C9D2003D73AE /* Controllers */,
 				0047D7E128F9FDD200D62ACA /* HeroTableViewCell.swift */,
-				A13D20991F9D323300EB19F7 /* Main.storyboard */,
+				004A1F442906CA0C003D73AE /* Views */,
 				A13D209C1F9D323300EB19F7 /* Assets.xcassets */,
-				A13D209E1F9D323300EB19F7 /* LaunchScreen.storyboard */,
 				A13D20A11F9D323300EB19F7 /* Info.plist */,
 			);
 			path = HeroisMarvel;
@@ -137,6 +161,7 @@
 				TargetAttributes = {
 					A13D20911F9D323300EB19F7 = {
 						CreatedOnToolsVersion = 9.0.1;
+						LastSwiftMigration = 1330;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -382,7 +407,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = jplima;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -400,7 +425,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = jplima;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

@@ -26,7 +26,7 @@ class MarvelAPI {
                 return
             }
             do{
-                let marvelInfo = try JSONDecoder().decode(MarvelInfo.self, from: data)
+                let marvelInfo = try? JSONDecoder().decode(MarvelInfo.self, from: data)
                 onComplete(marvelInfo)
             } catch {
                 print(error.localizedDescription)
